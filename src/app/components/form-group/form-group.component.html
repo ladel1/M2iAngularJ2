@@ -1,1 +1,26 @@
-<p>form-group works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <form [formGroup]="userForm" (submit)="ajouter()"  >
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" [ngClass]="{
+                        'form-control':true,
+                        'is-invalid': checkField('nom')
+                    }" id="nom" formControlName="nom"  >
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea [ngClass]="{
+                        'form-control':true,
+                        'is-invalid': checkField('description')
+                    }" id="description" formControlName="description" rows="3"></textarea>
+                  </div>
+                  <button class="btn btn-success" type="submit">Ajouter</button>
+                  <div *ngIf="fieldInvalide()" class="alert alert-danger mt-4" role="alert">
+                    Les champs sont obligatoire!
+                  </div>
+            </form>            
+        </div>
+    </div>
+</div>
