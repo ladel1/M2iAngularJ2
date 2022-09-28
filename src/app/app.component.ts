@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'blog';
+  // attributes
+  title:string = 'Blog';
+  p:string = "Bonjour tous le monde";
+  prenom:string="Steve";
+  annee:number = 0;
+  menu: string[]=["Home","Blog","Contact","About us","Register","Login"];
+  
+
+  // fonction d'addition
+  add(a:number,b:number):number{
+    return a+b;
+  }
+  // event
+  OnAjouter(){
+    console.log(this.prenom);
+  }
+
+  onCalculer(){
+    console.log(this.annee);
+  }
+
+
 }

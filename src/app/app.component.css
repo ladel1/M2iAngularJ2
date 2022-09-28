@@ -1,0 +1,21 @@
+header,nav,main{
+    border: 3px solid #000;
+}
+header{
+    grid-area: header;    
+}
+nav{
+    grid-area: menu;
+}
+main{
+    grid-area: main;
+}
+
+.gird-container{
+    display:grid;
+    grid-template-areas: 
+    'header header header header header'
+    'menu   main   main   main   main'
+    ;
+    gap: 5px;
+}

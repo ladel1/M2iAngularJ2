@@ -1,0 +1,8 @@
+<div [ngSwitch]="mois" >
+    <p *ngSwitchCase="1" >Janvier</p>
+    <p *ngSwitchCase="3" >Mars</p>
+    <p *ngSwitchDefault >Erreur</p>
+</div>
+
+<input type="text" [(ngModel)]="name">
+<button (click)="changer()" >click</button>
