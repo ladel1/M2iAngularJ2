@@ -28,4 +28,9 @@ export class AppComponent {
   }
 
 
+  recieveDataFromChild(data:string){
+    console.log("AppCompo ",data);
+  }
+
+
 }

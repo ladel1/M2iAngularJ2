@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormGroupComponent implements OnInit {
 
   userForm:FormGroup;
+  // send data to parent (AppCompnent)
+  @Output() sendData = new EventEmitter<string>();
 
   constructor(
     private formBuilder:FormBuilder,
@@ -33,7 +35,7 @@ export class FormGroupComponent implements OnInit {
    }
 
    ajouter(){ // ajouter dans api
-    console.log(this.userForm.value)    
+      this.sendData.emit(this.userForm.value.nom);  
    }
 
   ngOnInit(): void {
