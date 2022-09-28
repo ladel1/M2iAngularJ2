@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PassService } from '../services/pass.service';
+import { OperationService } from 'src/app/services/operation.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,16 +13,14 @@ export class HeaderComponent implements OnInit {
   name:string="";
 
   constructor(
-    private p:PassService,
+    private operation:OperationService // injection de dependence
   ) { }
 
   ngOnInit(): void {
-    console.log("send...")
-    this.p.updateApprovalMessage("coucou");    
+    console.log("JE suis dans Header",this.operation.mult(11,20))
   }
   changer(){
-    console.log("send...")
-    this.p.updateApprovalMessage(this.name); 
+
   }
 
 }

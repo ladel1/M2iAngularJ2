@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PassService } from '../services/pass.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,16 +8,24 @@ import { PassService } from '../services/pass.service';
 export class MenuComponent implements OnInit {
 
   @Input() cMenu:string[]=[];
+  copyMenu:string[]=[];
 
   flag:boolean = true;
 
   constructor(
-    private p:PassService,
   ) { }
 
+  ajouter(){
+    this.cMenu.push("Rouge");
+  }
+
+
   ngOnInit(): void {
-    console.log("recieve");
-    this.p.currentApprovalStageMessage.subscribe(msg => console.log(msg));
+    for(let item of this.cMenu){
+      this.copyMenu.push(item);
+    }
+    // console.log("recieve");
+    // this.p.currentApprovalStageMessage.subscribe(msg => console.log(msg));
   }
 
 

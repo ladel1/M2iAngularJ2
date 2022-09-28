@@ -1,4 +1,15 @@
 <div class="gird-container">
+    <h2>
+        Prénom att appCom: {{prenom}}
+    </h2>
+    <br>
+    *******************<br>
+    <ul>
+        <li *ngFor="let item of menu" >
+            <a> {{ item }} </a>
+        </li>
+    </ul>      <br> 
+    ****************
     <header>
         <app-header></app-header>
     </header>
@@ -6,6 +17,7 @@
         <app-menu [cMenu]="menu" ></app-menu>
     </nav>
     <main>
-        <app-content [cPrenom]="prenom" ></app-content>
+        <app-content [cPrenom]="prenom" ></app-content>        
     </main>
 </div>
+<app-footer></app-footer>
